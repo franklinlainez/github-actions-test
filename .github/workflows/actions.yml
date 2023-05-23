@@ -1,10 +1,16 @@
 name: Actions Workflow
 
 on:
-  repository_dispatch:
-    types: [build]
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+  push:
+    branches: #opposite as branches-ignore
+      - master
+      - 'feature/*' #matches feature/featA, except feature/some/thing
+      - 'feature/**' #this one will match everything after the first "/"
+      - '!feature/exclude' #this one will be excluded (!)
+    tags: #opposite as tags-ignore
+      - v1.*
+    paths: #opposite as paths-ignore
+      - '**.js'
 
 jobs:
   run-github-actions:

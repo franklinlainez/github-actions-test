@@ -1,9 +1,9 @@
 name: CI
 on:
   pull_request:
-    branches: [section-5-ci-cd-workflow-dev]
+    branches: [section-5-ci-cd-workflow-new-workflow]
   push:
-    branches: [section-5-ci-cd-workflow-dev]
+    branches: [section-5-ci-cd-workflow-new-workflow]
 jobs:
   build:
     runs-on: ubuntu-latest
